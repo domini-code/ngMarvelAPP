@@ -1,3 +1,11 @@
-<p>
-  character works!
-</p>
+<mat-card>
+  <img mat-card-image src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}">
+  <mat-card-title>
+    {{character.name}}
+  </mat-card-title>
+  <mat-card-footer>
+    <a href="{{character.urls[0].url}}" target="_blank" fxFlex mat-flat-button color="primary">
+      Details
+    </a>
+  </mat-card-footer>
+</mat-card>

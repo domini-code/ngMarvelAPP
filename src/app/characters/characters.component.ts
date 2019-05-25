@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CharactersApiService } from './character/shared/characters-api.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-characters',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private characterSvc: CharactersApiService) { }
+  allCharacters: Observable<any>;
 
   ngOnInit() {
+    this.getCharacters();
   }
 
+  getCharacters() {
+    this.allCharacters = this.characterSvc.getAllCharacters();
+  }
 }
